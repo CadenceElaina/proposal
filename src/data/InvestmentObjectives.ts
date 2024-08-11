@@ -4,7 +4,7 @@ export const IOs = {
     risk: 1,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.12 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.02 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.02 },
       { asset: "U.S. Small Cap Equities", percentage: 0 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0 },
       { asset: "Emerging Market Equities", percentage: 0 },
@@ -25,7 +25,7 @@ export const IOs = {
     risk: 2,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.18 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.05 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.05 },
       { asset: "U.S. Small Cap Equities", percentage: 0 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.04 },
       { asset: "Emerging Market Equities", percentage: 0 },
@@ -46,7 +46,7 @@ export const IOs = {
     risk: 3,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.21 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.07 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.07 },
       { asset: "U.S. Small Cap Equities", percentage: 0 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.07 },
       { asset: "Emerging Market Equities", percentage: 0 },
@@ -67,7 +67,7 @@ export const IOs = {
     risk: 4,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.23 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.08 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.08 },
       { asset: "U.S. Small Cap Equities", percentage: 0.02 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.07 },
       { asset: "Emerging Market Equities", percentage: 0.04 },
@@ -88,7 +88,7 @@ export const IOs = {
     risk: 5,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.27 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.1 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.1 },
       { asset: "U.S. Small Cap Equities", percentage: 0.03 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.08 },
       { asset: "Emerging Market Equities", percentage: 0.05 },
@@ -109,7 +109,7 @@ export const IOs = {
     risk: 6,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.31 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.12 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.12 },
       { asset: "U.S. Small Cap Equities", percentage: 0.03 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.09 },
       { asset: "Emerging Market Equities", percentage: 0.06 },
@@ -130,7 +130,7 @@ export const IOs = {
     risk: 7,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.33 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.13 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.13 },
       { asset: "U.S. Small Cap Equities", percentage: 0.05 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.14 },
       { asset: "Emerging Market Equities", percentage: 0.09 },
@@ -151,7 +151,7 @@ export const IOs = {
     risk: 8,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.35 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.14 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.14 },
       { asset: "U.S. Small Cap Equities", percentage: 0.06 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.15 },
       { asset: "Emerging Market Equities", percentage: 0.12 },
@@ -172,7 +172,7 @@ export const IOs = {
     risk: 9,
     assetAllocation: [
       { asset: "U.S. Large Cap Equities", percentage: 0.37 },
-      { asset: "U.S. Mid Cap Equitiets", percentage: 0.16 },
+      { asset: "U.S. Mid Cap Equities", percentage: 0.16 },
       { asset: "U.S. Small Cap Equities", percentage: 0.07 },
       { asset: "Developed Market Ex-U.S. Equities", percentage: 0.18 },
       { asset: "Emerging Market Equities", percentage: 0.15 },

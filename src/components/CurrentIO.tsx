@@ -16,40 +16,43 @@ const CurrentIO = ({ currentClientIO }) => {
   };
 
   return (
-    <div>
-      <table className="table">
-        <caption>
-          <label htmlFor="investment-objectives">
-            Select Investment Objective:
-          </label>
-          <select
-            id="investment-objectives"
-            value={currentIO}
-            onChange={handleChange}
-          >
-            {Object.keys(IOs).map((key) => (
-              <option key={key} value={key}>
-                {IOs[key].name}
-              </option>
-            ))}
-          </select>
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Asset</th>
-            <th scope="col">Percentage of Portfolio</th>
-          </tr>
-        </thead>
-        <tbody>
-          {assetAllocation.map(({ asset, percentage }) => (
-            <tr key={asset}>
-              <td>{asset}</td>
-              <td>{(percentage * 100).toFixed(2)}%</td>
-            </tr>
+    <>
+      <div className="select-container">
+        <label htmlFor="investment-objectives">
+          Select Investment Objective:
+        </label>
+        <select
+          id="investment-objectives"
+          value={currentIO}
+          onChange={handleChange}
+        >
+          {Object.keys(IOs).map((key) => (
+            <option key={key} value={key}>
+              {IOs[key].name}
+            </option>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </select>
+      </div>
+      <div>
+        <table className="table">
+          <caption></caption>
+          <thead>
+            <tr>
+              <th scope="col">Asset</th>
+              <th scope="col">Percentage of Portfolio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {assetAllocation.map(({ asset, percentage }) => (
+              <tr key={asset}>
+                <td>{asset}</td>
+                <td>{(percentage * 100).toFixed(2)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

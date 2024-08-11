@@ -1,12 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --background-color: #2e2e2e; /* Darker background */
+  --primary-color: #3b3b3b; /* Slightly lighter for content areas */
+  --accent-color: #ffc107; /* Warm yellow accent */
+  --secondary-accent-color: #001f3f;
+  --text-color: #f0f0f0; /* Light text color for readability */
+  --secondary-text-color: #d1d1d1; /* Slightly muted text color */
+  --border-color: #474747; /* Border color for tables and elements */
+
+  --success-color: #4caf50; /* Green for success messages */
+  --error-color: #f44336; /* Red for error messages */
+  --warning-color: #ff9800; /* Orange for warning messages */
+  --info-color: #2196f3; /* Blue for informational messages */
+  --link-color: #00adb5; /* Cyan for links */
+  --hover-color: #555555; /* Darker gray for hover effects */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--accent-color); /* Use accent color for headings */
+}
+
+input,
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input {
+  width: 100%; /* Make input take full width */
+  max-width: 400px; /* Limit the width */
+  margin: 10px 0; /* Add some margin */
+}
+
+button {
+  background-color: var(--accent-color); /* Button background */
+  color: var(--text-color); /* Button text color */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+button:hover {
+  background-color: var(
+    --highlight-color
+  ); /* Change button background on hover */
+}
+.select-container {
+  margin: 10px 0 10px 0;
 }
 .table {
-  background-color: white;
-  color: white;
-  background: gray;
-  border: 1px solid blue;
+  background-color: var(--secondary-color); /* Table background */
+  color: var(--text-color); /* Table text color */
+  border-collapse: collapse;
+  width: 50%;
+  border-top: 25px solid var(--accent-color);
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid var(--accent-color); /* Table border color */
+}
+
+.dropdown {
+  border: 1px solid var(--accent-color); /* Dropdown border color */
+  background-color: var(--secondary-color); /* Dropdown background */
+  color: var(--text-color); /* Dropdown text color */
+}
+
+/* Additional styles for dropdown items */
+.dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: var(--accent-color); /* Dropdown item hover effect */
+}
+
+@media (max-width: 768px) {
+  input {
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
+
+  .table {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 }
