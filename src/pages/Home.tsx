@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CurrentIO from "../components/CurrentIO";
 import SearchClient from "../components/SearchClient"; // Import the SearchClient component
 import { IOs } from "../data/InvestmentObjectives";
+import Navigation from "../components/Navigation";
 
 const Home = () => {
   const [currentClient, setCurrentClient] = useState(null);
@@ -9,6 +10,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
+      <Navigation />
       <SearchClient setCurrentClient={setCurrentClient} />{" "}
       {/* Use the SearchClient component */}
       {currentClient && (
