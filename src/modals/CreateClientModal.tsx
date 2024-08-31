@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IOs } from "../data/InvestmentObjectives";
 
 const CreateClientModal = ({ isOpen, onClose, onSubmit, newClient, handleInputChange, handleOwnsInvestmentsChange }) => {
+  const modalRef = useRef(null);
   const [ownsInvestments, setOwnsInvestments] = useState(false);
   const [investments, setInvestments] = useState(["", "", "", "", ""]); // 5 initial symbols
 
@@ -25,11 +26,28 @@ const CreateClientModal = ({ isOpen, onClose, onSubmit, newClient, handleInputCh
     onSubmit(e, investments); // Pass investments back to parent component on submit
   };
 
+  // Close modal if clicked outside the content
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose(); // Call onClose if clicked outside modal
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <div className="modal">
-      <div className="modal-content">
+      <div className="modal-content" ref={modalRef}>
         <h2>Create New Client</h2>
         <form onSubmit={handleFormSubmit}>
           <div>

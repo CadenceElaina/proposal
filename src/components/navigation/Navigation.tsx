@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import CreateClientModal from "../modals/CreateClientModal";
+import CreateClientModal from "../../modals/CreateClientModal";
+import "./navigation.css"
 
 const Navigation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,23 +19,23 @@ const Navigation = () => {
 
   const handleFormSubmit = (e, investments) => {
     e.preventDefault();
-  
+
     // Use the previous state to update the client with investments
     setNewClient((prevClient) => {
-      const updatedClient = { 
-        ...prevClient, 
+      const updatedClient = {
+        ...prevClient,
         investments: prevClient.ownsInvestments ? investments : [] // Set investments if ownsInvestments is true
       };
-      
+
       // Log the updated client details
       console.log("New client created:", updatedClient);
-  
+
       return updatedClient;
     });
-  
+
     setIsModalOpen(false); // Close modal after submitting
   };
-  
+
 
   const handleOwnsInvestmentsChange = (value) => {
     setNewClient({ ...newClient, ownsInvestments: value });
@@ -44,12 +45,12 @@ const Navigation = () => {
     <>
       <nav className="navigation">
         <div>
-          <ul>
+          <ul className="navigation-list">
             <Link to={"/"}>
               <li>Home</li>
             </Link>
             <li>
-              <button onClick={() => setIsModalOpen(true)}>
+              <button className="navigation-button" onClick={() => setIsModalOpen(true)}>
                 Create new client
               </button>
             </li>

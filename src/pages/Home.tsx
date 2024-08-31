@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import CurrentIO from "../components/CurrentIO";
-import SearchClient from "../components/SearchClient"; // Import the SearchClient component
+import SearchClient from "../components/SearchClient";
 import { IOs } from "../data/InvestmentObjectives";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/navigation/Navigation";
 
 const Home = () => {
   const [currentClient, setCurrentClient] = useState(null);
 
   return (
     <div>
-      <h1>Home</h1>
       <Navigation />
+      <h1>Home</h1>
+
       <SearchClient setCurrentClient={setCurrentClient} />{" "}
       {/* Use the SearchClient component */}
       {currentClient && (
@@ -23,9 +24,6 @@ const Home = () => {
           </h3>
           <CurrentIO currentClientIO={currentClient.investmentObjective} />
         </>
-      )}
-      {!currentClient && (
-        <p>Client not found. Would you like to create a new record?</p>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IOs } from "../data/InvestmentObjectives";
 // object lists IOs and ideal ratios
 // calculate curr port and see which io is closest
@@ -8,6 +8,14 @@ const CurrentIO = ({ currentClientIO }) => {
   const [assetAllocation, setAssetAllocation] = useState(
     IOs[currentClientIO].assetAllocation
   );
+
+  // Update state whenever currentClientIO changes
+  useEffect(() => {
+    if (currentClientIO) {
+      setCurrentIO(currentClientIO);
+      setAssetAllocation(IOs[currentClientIO].assetAllocation);
+    }
+  }, [currentClientIO])
 
   const handleChange = (event) => {
     const selectedIO = event.target.value;

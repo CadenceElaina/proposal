@@ -1,18 +1,30 @@
 :root {
-  --background-color: #2e2e2e; /* Darker background */
-  --primary-color: #3b3b3b; /* Slightly lighter for content areas */
-  --accent-color: #ffc107; /* Warm yellow accent */
+  --background-color: #2e2e2e;
+  /* Darker background */
+  --primary-color: #3b3b3b;
+  /* Slightly lighter for content areas */
+  --accent-color: #ffc107;
+  /* Warm yellow accent */
   --secondary-accent-color: #001f3f;
-  --text-color: #f0f0f0; /* Light text color for readability */
-  --secondary-text-color: #d1d1d1; /* Slightly muted text color */
-  --border-color: #474747; /* Border color for tables and elements */
+  --text-color: #f0f0f0;
+  /* Light text color for readability */
+  --secondary-text-color: #d1d1d1;
+  /* Slightly muted text color */
+  --border-color: #474747;
+  /* Border color for tables and elements */
 
-  --success-color: #4caf50; /* Green for success messages */
-  --error-color: #f44336; /* Red for error messages */
-  --warning-color: #ff9800; /* Orange for warning messages */
-  --info-color: #2196f3; /* Blue for informational messages */
-  --link-color: #00adb5; /* Cyan for links */
-  --hover-color: #555555; /* Darker gray for hover effects */
+  --success-color: #4caf50;
+  /* Green for success messages */
+  --error-color: #f44336;
+  /* Red for error messages */
+  --warning-color: #ff9800;
+  /* Orange for warning messages */
+  --info-color: #2196f3;
+  /* Blue for informational messages */
+  --link-color: #00adb5;
+  /* Cyan for links */
+  --hover-color: #555555;
+  /* Darker gray for hover effects */
 }
 
 body {
@@ -26,11 +38,12 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--accent-color); /* Use accent color for headings */
+  color: var(--accent-color);
+  /* Use accent color for headings */
 }
 
-input,
-button {
+.main-content-button,
+input {
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -38,22 +51,23 @@ button {
 }
 
 input {
-  width: 100%; /* Make input take full width */
-  max-width: 400px; /* Limit the width */
-  margin: 10px 0; /* Add some margin */
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
 }
 
-button {
-  background-color: var(--accent-color); /* Button background */
-  color: var(--text-color); /* Button text color */
+.main-content-button {
+  background-color: var(--info-color);
+  color: var(--text-color);
   cursor: pointer;
-  transition: background-color 0.3s; /* Transition for hover effect */
+  transition: background-color 0.3s;
+  border: 1px solid transparent;
+  /* Transition for hover effect */
 }
 
-button:hover {
-  background-color: var(
-    --highlight-color
-  ); 
+.main-content-button:hover {
+  background-color: var(--highlight-color);
+  border: 1px solid white;
 }
 
 .modal-button {
@@ -62,27 +76,33 @@ button:hover {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
-  transition: background-color 0.3s; /* Transition for hover effect */
+  transition: background-color 0.3s;
+  /* Transition for hover effect */
 }
 
 .modal-button:hover {
-  background-color: var(--hover-color) !important; 
+  background-color: var(--hover-color) !important;
 }
 
 .modal-button[type="submit"] {
-  background-color: var(--success-color); /* Success color for submit button */
+  background-color: var(--success-color);
+  /* Success color for submit button */
 }
 
 .modal-button[type="button"] {
-  background-color: var(--error-color); /* Error color for cancel button */
+  background-color: var(--error-color);
+  /* Error color for cancel button */
 }
 
 .select-container {
   margin: 10px 0 10px 0;
 }
+
 .table {
-  background-color: var(--secondary-color); /* Table background */
-  color: var(--text-color); /* Table text color */
+  background-color: var(--secondary-color);
+  /* Table background */
+  color: var(--text-color);
+  /* Table text color */
   border-collapse: collapse;
   width: 50%;
   border-top: 25px solid var(--accent-color);
@@ -91,31 +111,26 @@ button:hover {
 .table th,
 .table td {
   padding: 12px;
-  border: 1px solid var(--accent-color); /* Table border color */
+  border: 1px solid var(--accent-color);
 }
 
 .dropdown {
-  border: 1px solid var(--accent-color); /* Dropdown border color */
-  background-color: var(--secondary-color); /* Dropdown background */
-  color: var(--text-color); /* Dropdown text color */
+  border: 1px solid var(--accent-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   max-height: 200px;
   overflow-y: scroll;
 }
 
-/* Additional styles for dropdown items */
 .dropdown li {
   padding: 10px;
   cursor: pointer;
 }
 
 .dropdown li:hover {
-  background-color: var(--accent-color); /* Dropdown item hover effect */
+  background-color: var(--accent-color);
 }
 
-.navigation a{
-  text-decoration: none;
-  color: var(--link-color)
-}
 
 .modal {
   position: fixed;
@@ -123,32 +138,40 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  background: rgba(0, 0, 0, 0.8);
+  /* Dark semi-transparent background */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 1000; /* Ensure the modal is on top */
-  overflow: hidden; /* Prevent scrolling when the modal is open */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Ensure the modal is on top */
+  overflow: hidden;
+  /* Prevent scrolling when the modal is open */
 }
 
 .modal-content {
-  background-color: var(--primary-color); /* Modal background color */
-  color: var(--text-color); /* Modal text color */
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-  width: 90%; /* Adjust width for smaller screens */
-  max-width: 500px; /* Limit max width */
-  z-index: 1001; /* Ensure the content is above the background */
-  animation: fadeIn 0.3s ease; /* Optional: Add a fade-in effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Add a subtle shadow */
+  width: 90%;
+  /* Adjust width for smaller screens */
+  max-width: 500px;
+  /* Limit max width */
+  z-index: 1001;
+  /* Ensure the content is above the background */
+  animation: fadeIn 0.3s ease;
 }
 
-/* Optional: Add a fade-in animation for the modal */
+/* Add a fade-in animation for the modal */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -158,10 +181,12 @@ button:hover {
 
 @media (max-width: 768px) {
   input {
-    max-width: 100%; /* Allow full width on smaller screens */
+    max-width: 100%;
+    /* Allow full width on smaller screens */
   }
 
   .table {
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
   }
 }

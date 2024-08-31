@@ -20,13 +20,23 @@ const SearchClient = ({ setCurrentClient }) => {
     const foundClient = Clients.find(
       (client) => client.name.toLowerCase() === searchTerm.toLowerCase()
     );
+
     if (foundClient) {
       setCurrentClient(foundClient);
       setSearchTerm(""); // Clear the search term
       setDropdownOpen(false); // Close the dropdown
+    } else if (filteredClients.length === 1) {
+      handleSelectClient(filteredClients[0]);
+    } else if (filteredClients.length > 1) {
+      setDropdownOpen(true);
     } else {
       alert("Client not found. Would you like to create a new record?");
     }
+  };
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+    setDropdownOpen(true); // Open dropdown as user types
   };
 
   return (
@@ -35,12 +45,16 @@ const SearchClient = ({ setCurrentClient }) => {
         type="text"
         className="input"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleInputChange}
         placeholder="Enter client's name"
         onFocus={() => setDropdownOpen(true)} // Open dropdown on focus
-        onBlur={() => setTimeout(() => setDropdownOpen(false), 100)} // Delay closing for click events
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        }}
       />
-      <button className="button" onClick={handleSearch}>
+      <button className="main-content-button" onClick={handleSearch}>
         Search!
       </button>
       {dropdownOpen && (
